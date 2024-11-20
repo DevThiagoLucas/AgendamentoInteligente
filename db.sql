@@ -1,0 +1,20 @@
+GRANT ALL PRIVILEGES ON eventos.* TO 'root'@'localhost';
+FLUSH PRIVILEGES;
+
+DROP DATABASE IF EXISTS eventos;
+CREATE DATABASE IF NOT EXISTS eventos;
+USE eventos;
+
+CREATE TABLE IF NOT EXISTS usuarios(
+  usuario VARCHAR(15) NOT NULL,
+  senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS evento(
+  id INT NOT NULL AUTO_INCREMENT,
+  descricao VARCHAR(255) NOT NULL,
+  localizacao VARCHAR(255) NOT NULL,
+  inicio DATETIME,
+  termino DATETIME, 
+  PRIMARY KEY (id)
+);
